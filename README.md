@@ -24,4 +24,4 @@
 ### List of test cases
 + create new buffer should empty
 + create new buffer with default size should 10
-
++ write A to buffer should read A
