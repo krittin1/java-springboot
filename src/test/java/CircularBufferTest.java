@@ -46,7 +46,7 @@ public class CircularBufferTest {
 
     @Test
     public void overwrite_data_in_oldest_data() {
-       
+
         for (int i = 0; i < 11; i++) {
             cb.writeData((char) ('A' + i) + "");
         }
