@@ -26,3 +26,4 @@
 + create new buffer with default size should 10
 + write A to buffer should read A
 + after write data in every indexes buffer should full
++ after set 15 size buffer size should change to 15
