@@ -25,6 +25,7 @@
 + create new buffer should empty
 + create new buffer with default size should 10
 + write A to buffer should read A
++ write A then B to buffer should read A then B
 + after write data in every indexes buffer should full
 + after set 15 size buffer size should change to 15
 + overwrite data in oldest data when write new data but buffer is full
