@@ -20,20 +20,20 @@ public class TennisGame2 {
         if (equalScoreButLessThan4) {
             return getplayerResult(player1Point) + "-All";
         }
-        
-        if (player1Point == player2Point) {
+
+        else if (player1Point == player2Point) {
             return "Deuce";
         }
-        if (player1Point >= 4 && player2Point >= 0 && (player1Point - player2Point) >= 2) {
+        else if (player1Point >= 4 && player2Point >= 0 && (player1Point - player2Point) >= 2) {
             return  "Win for "+ player1Name;
         }
-        if (player2Point >= 4 && player1Point >= 0 && (player2Point - player1Point) >= 2) {
+        else if (player2Point >= 4 && player1Point >= 0 && (player2Point - player1Point) >= 2) {
             return  "Win for "+ player2Name;
         }
-        if (player1Point > player2Point && player2Point >= 3 && (player1Point - player2Point) == 1) {
+        else if (player1Point > player2Point && player2Point >= 3 && (player1Point - player2Point) == 1) {
             return  "Advantage "+ player1Name;
         }
-        if (player2Point > player1Point && player1Point >= 3 && (player2Point - player1Point) == 1) {
+        else if (player2Point > player1Point && player1Point >= 3 && (player2Point - player1Point) == 1) {
             return  "Advantage "+ player2Name;
         }
         return getplayerResult(player1Point) + "-" + getplayerResult(player2Point);
