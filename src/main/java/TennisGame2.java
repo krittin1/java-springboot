@@ -16,13 +16,9 @@ public class TennisGame2 {
     }
 
     public String getScore() {
-        boolean equalScoreButLessThan4 = player1Point == player2Point && player1Point < 3;
-        if (equalScoreButLessThan4) {
-            return getplayerResult(player1Point) + "-All";
-        }
 
-        else if (player1Point == player2Point) {
-            return "Deuce";
+        if (player1Point == player2Point) {
+            return (player1Point < 3) ? getplayerResult(player1Point) + "-All" : "Deuce";
         }
         else if (player1Point >= 4 && player2Point >= 0 && (player1Point - player2Point) >= 2) {
             return  "Win for "+ player1Name;
