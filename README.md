@@ -33,5 +33,5 @@
 
 
 ### List of refactor
-+ some duplicate statement in condition
-+ can use statement instead method
+- [x] some duplicate statement in condition
+- [x] can use statement instead method
