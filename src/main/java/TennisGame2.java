@@ -20,10 +20,8 @@ public class TennisGame2 {
         if (equalScoreButLessThan4) {
             return getplayerResult(player1Point) + "-All";
         }
-
-        // Deuce
-        boolean isDeuce = player1Point == player2Point;
-        if (isDeuce) {
+        
+        if (player1Point == player2Point) {
             return "Deuce";
         }
         if (player1Point >= 4 && player2Point >= 0 && (player1Point - player2Point) >= 2) {
