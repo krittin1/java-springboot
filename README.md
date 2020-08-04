@@ -29,3 +29,7 @@
 + after write data in every indexes buffer should full
 + after set 15 size buffer size should change to 15
 + overwrite data in oldest data when write new data but buffer is full
+
+### List of refactor
++ some duplicate statement in condition
++ can use statement instead method
