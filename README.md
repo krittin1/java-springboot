@@ -30,6 +30,11 @@
 + after set 15 size buffer size should change to 15
 + overwrite data in oldest data when write new data but buffer is full
 
+- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
+- [x] list syntax required (any unordered or ordered list supported)
+- [x] this is a complete item
+- [ ] this is an incomplete item
+
 ### List of refactor
 + some duplicate statement in condition
 + can use statement instead method
