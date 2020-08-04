@@ -11,63 +11,34 @@ public class TennisGame2 {
     }
 
     public String getplayerResult(int point) {
-        if (point == 0)
-            return "Love";
-        if (point == 1)
-            return "Fifteen";
-        if (point == 2)
-            return "Thirty";
-        return "Forty";
+        String[] textScore = {"Love", "Fifteen", "Thirty", "Forty"};
+        return textScore[point];
     }
 
     public String getScore() {
-        String player1Result = "";
-        String player2Result = "";
-        String score = "";
-        if (player1Point == player2Point && player1Point < 4) {
-            score = getplayerResult(player1Point);
-            score += "-All";
-        }
-        if (player1Point == player2Point && player1Point >= 3)
-            score = "Deuce";
-
-        if (player1Point > 0 && player2Point == 0) {
-            player1Result = getplayerResult(player1Point);
-            player2Result = "Love";
-            score = player1Result + "-" + player2Result;
-        }
-        if (player2Point > 0 && player1Point == 0) {
-            player2Result = getplayerResult(player2Point);
-            player1Result = "Love";
-            score = player1Result + "-" + player2Result;
+        boolean equalScoreButLessThan4 = player1Point == player2Point && player1Point < 3;
+        if (equalScoreButLessThan4) {
+            return getplayerResult(player1Point) + "-All";
         }
 
-        if (player1Point > player2Point && player1Point < 4) {
-            player1Result = getplayerResult(player1Point);
-            player2Result = getplayerResult(player2Point);
-            score = player1Result + "-" + player2Result;
+        // Deuce
+        boolean isDeuce = player1Point == player2Point && player1Point >= 3;
+        if (isDeuce) {
+            return "Deuce";
         }
-        if (player2Point > player1Point && player2Point < 4) {
-            player2Result = getplayerResult(player2Point);
-            player1Result = getplayerResult(player1Point);
-            score = player1Result + "-" + player2Result;
-        }
-
-        if (player1Point > player2Point && player2Point >= 3) {
-            score = "Advantage player1";
-        }
-
-        if (player2Point > player1Point && player1Point >= 3) {
-            score = "Advantage player2";
-        }
-
         if (player1Point >= 4 && player2Point >= 0 && (player1Point - player2Point) >= 2) {
-            score = "Win for player1";
+            return  "Win for "+ player1Name;
         }
         if (player2Point >= 4 && player1Point >= 0 && (player2Point - player1Point) >= 2) {
-            score = "Win for player2";
+            return  "Win for "+ player2Name;
         }
-        return score;
+        if (player1Point > player2Point && player2Point >= 3 && (player1Point - player2Point) == 1) {
+            return  "Advantage "+ player1Name;
+        }
+        if (player2Point > player1Point && player1Point >= 3 && (player2Point - player1Point) == 1) {
+            return  "Advantage "+ player2Name;
+        }
+        return getplayerResult(player1Point) + "-" + getplayerResult(player2Point);
     }
 
     public void wonPoint(String player) {
